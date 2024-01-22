@@ -1,0 +1,31 @@
+object FrmPrincipal: TFrmPrincipal
+  Left = 0
+  Top = 0
+  ClientHeight = 325
+  ClientWidth = 572
+  Fill.Color = xFF3C6EDE
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object pnlPrincipal: TPanel
+    Align = Top
+    Size.Width = 572.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Label1: TLabel
+      Align = Client
+      AutoSize = True
+      StyledSettings = [Family, Style, FontColor]
+      Size.Width = 572.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 14.000000000000000000
+      TextSettings.HorzAlign = Center
+      Text = 'Certifica'#231#227'o Especialista em Programa'#231#227'o Orientada a Objetos'
+      TabOrder = 1
+    end
+  end
+end
