@@ -3,7 +3,9 @@ program CertificacaoPOO;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  uPrincipal in 'uPrincipal.pas' {FrmPrincipal};
+  View.Principal in 'Views\View.Principal.pas' {FrmPrincipal},
+  Classe.Paciente in 'Classes\Classe.Paciente.pas';
+
 
 {$R *.res}
 
