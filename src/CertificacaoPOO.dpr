@@ -4,8 +4,8 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   View.Principal in 'Views\View.Principal.pas' {FrmPrincipal},
-  Classe.Paciente in 'Classes\Classe.Paciente.pas';
-
+  Classe.Paciente in 'Classes\Classe.Paciente.pas' {$R *.res},
+  Classe.Endereco in 'Classes\Classe.Endereco.pas';
 
 {$R *.res}
 

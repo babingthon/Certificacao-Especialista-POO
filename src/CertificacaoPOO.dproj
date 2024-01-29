@@ -193,6 +193,7 @@
         <DCCReference Include="Classes\Classe.Paciente.pas">
             <Form>$R *.res</Form>
         </DCCReference>
+        <DCCReference Include="Classes\Classe.Endereco.pas"/>
         <None Include="CertificacaoPOO.dpr"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
