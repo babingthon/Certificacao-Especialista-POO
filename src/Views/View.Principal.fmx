@@ -56,4 +56,54 @@ object FrmPrincipal: TFrmPrincipal
       TabOrder = 1
     end
   end
+  object Button2: TButton
+    Position.X = 96.000000000000000000
+    Position.Y = 174.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'PessoaFisica'
+    OnClick = Button2Click
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 6
+    Position.X = 96.000000000000000000
+    Position.Y = 144.000000000000000000
+  end
+  object Edit2: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 5
+    Position.X = 204.000000000000000000
+    Position.Y = 144.000000000000000000
+  end
+  object Label2: TLabel
+    Position.X = 96.000000000000000000
+    Position.Y = 122.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Nome'
+    TabOrder = 8
+  end
+  object Label3: TLabel
+    Position.X = 204.000000000000000000
+    Position.Y = 122.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Sobrenome'
+    TabOrder = 7
+  end
+  object Button3: TButton
+    Position.X = 204.000000000000000000
+    Position.Y = 174.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'PessoaJuridica'
+    OnClick = Button3Click
+  end
 end

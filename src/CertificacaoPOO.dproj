@@ -191,9 +191,26 @@
             <Form>FrmPrincipal</Form>
         </DCCReference>
         <DCCReference Include="Classes\Classe.Paciente.pas">
-            <Form>$R *.res</Form>
+            <Form>,
+  Classe.Endereco in &apos;Classes\Classe.Endereco.pas&apos;,
+  Interfaces.Paciente in &apos;Interfaces\Interfaces.Paciente.pas&apos;,
+  Classe.PessoaFisica in &apos;Classes\Classe.PessoaFisica.pas&apos;,
+  Interfaces.Pessoa in &apos;Interfaces\Interfaces.Pessoa.pas&apos;,
+  Classe.PessoaJuridica in &apos;Classes\Classe.PessoaJuridica.pas&apos;,
+  Interfaces.Pessoa.Factory in &apos;Interfaces\Interfaces.Pessoa.Factory.pas&apos;,
+  Interfaces.Controller in &apos;Interfaces\Interfaces.Controller.pas&apos;,
+  Controller.Pessoa in &apos;Controllers\Controller.Pessoa.pas&apos;;
+
+{$R *.res</Form>
         </DCCReference>
         <DCCReference Include="Classes\Classe.Endereco.pas"/>
+        <DCCReference Include="Interfaces\Interfaces.Paciente.pas"/>
+        <DCCReference Include="Classes\Classe.PessoaFisica.pas"/>
+        <DCCReference Include="Interfaces\Interfaces.Pessoa.pas"/>
+        <DCCReference Include="Classes\Classe.PessoaJuridica.pas"/>
+        <DCCReference Include="Interfaces\Interfaces.Pessoa.Factory.pas"/>
+        <DCCReference Include="Interfaces\Interfaces.Controller.pas"/>
+        <DCCReference Include="Controllers\Controller.Pessoa.pas"/>
         <None Include="CertificacaoPOO.dpr"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

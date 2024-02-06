@@ -3,13 +3,16 @@ unit Classe.Paciente;
 interface
 
   uses
-    System.SysUtils, Classe.Endereco;
+    System.SysUtils, Classe.Endereco, Interfaces.Paciente;
 
   Type
-    TPaciente = class
+    TPaciente = class(TInterfacedObject, IPaciente)
       private
-        FNome: string;
-        procedure SetNome(const Value: string);
+        FNome : string;
+        FSobreNome : string;
+        function Nome(Value: string): IPaciente;
+        function SobreNome(Value: string): IPaciente;
+        function NomeCompleto: string;
       public
         DataNascimento: TDateTime;
         DataObito: TDateTime;
@@ -21,7 +24,7 @@ interface
         Endereco: TEndereco;
         constructor Create;
         destructor Destroy; override;
-        property Nome: string read FNome write SetNome;
+        class function New : IPaciente;
     end;
 
 implementation
@@ -39,13 +42,26 @@ implementation
       inherited;
     end;
 
-  procedure TPaciente.SetNome(const Value: string);
+  class function TPaciente.New: IPaciente;
+begin
+   Result := self.Create; 
+end;
+
+function TPaciente.Nome(Value: string): IPaciente;
     begin
-
-      if Trim(Value) = '' then
-        raise Exception.Create('Informe o nome do paciente.');
-
+      Result := self;
       FNome := Value;
+    end;
+
+  function TPaciente.NomeCompleto: string;
+    begin
+      Result := FNome + ' ' + FSobreNome;
+    end;
+
+  function TPaciente.SobreNome(Value: string): IPaciente;
+    begin
+      Result := self;
+      FSobreNome := Value;
     end;
 
 end.

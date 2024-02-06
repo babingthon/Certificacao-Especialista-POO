@@ -8,7 +8,7 @@ interface
     FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
     FMX.Memo.Types,
     FMX.StdCtrls, FMX.ScrollBox, FMX.Memo, FMX.Controls.Presentation,
-    Classe.Paciente;
+    Classe.Paciente, FMX.Edit, Interfaces.Pessoa;
 
   type
     TFrmPrincipal = class(TForm)
@@ -16,8 +16,18 @@ interface
       MemoResultado: TMemo;
       pnlPrincipal: TPanel;
       Label1: TLabel;
+      Button2: TButton;
+      Edit1: TEdit;
+      Edit2: TEdit;
+      Label2: TLabel;
+      Label3: TLabel;
+      Button3: TButton;
       procedure Button1Click(Sender: TObject);
+      procedure Button2Click(Sender: TObject);
+      procedure Button3Click(Sender: TObject);
       private
+
+        FPessoa: IPessoa;
         { Private declarations }
       public
         { Public declarations }
@@ -28,9 +38,12 @@ interface
 
 implementation
 
+uses
+  Controller.Pessoa, Interfaces.Controller;
+
   {$R *.fmx}
 
-procedure TFrmPrincipal.Button1Click(Sender: TObject);
+  procedure TFrmPrincipal.Button1Click(Sender: TObject);
     var
       Paciente: TPaciente;
     begin
@@ -38,7 +51,7 @@ procedure TFrmPrincipal.Button1Click(Sender: TObject);
       Paciente := TPaciente.Create;
 
       try
-        Paciente.Nome := 'Babingthon Bandeira';
+        // Paciente.Nome := 'Babingthon Bandeira';
         Paciente.Email := 'babingthon.bandeira@gmail.com';
         Paciente.NomePai := 'Bartolomeu Bandeira de Melo';
         Paciente.NomeMae := 'Maria das Dores Silva Bandeira';
@@ -53,7 +66,7 @@ procedure TFrmPrincipal.Button1Click(Sender: TObject);
         Paciente.Endereco.Uf := 'RN';
         Paciente.Endereco.CEP := '59.148-550';
 
-        MemoResultado.Lines.Add(Paciente.Nome);
+        // MemoResultado.Lines.Add(Paciente.Nome);
         MemoResultado.Lines.Add(Paciente.Email);
         MemoResultado.Lines.Add(Paciente.NomePai);
         MemoResultado.Lines.Add(Paciente.NomeMae);
@@ -70,6 +83,30 @@ procedure TFrmPrincipal.Button1Click(Sender: TObject);
       finally
         FreeAndNil(Paciente);
       end;
+
+    end;
+
+  procedure TFrmPrincipal.Button2Click(Sender: TObject);
+    begin
+
+      FPessoa := TControllerPessoa.New.Pessoa(tpFisica);
+
+      MemoResultado.Lines.Add(FPessoa
+        .Nome(Edit1.Text)
+        .SobreNome(Edit2.Text)
+        .NomeCompleto);
+
+    end;
+
+  procedure TFrmPrincipal.Button3Click(Sender: TObject);
+    begin
+
+      FPessoa := TControllerPessoa.New.Pessoa(tpJuridica);
+
+      MemoResultado.Lines.Add(FPessoa
+        .Nome(Edit1.Text)
+        .SobreNome(Edit2.Text)
+        .NomeCompleto);
 
     end;
 
