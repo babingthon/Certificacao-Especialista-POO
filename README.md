@@ -1,4 +1,4 @@
-# Certificacao-EspecialistaPOO
+# Certificacao-Especialista POO
 
 Certificação Especialista em Programação Orientada a Objetos
 
